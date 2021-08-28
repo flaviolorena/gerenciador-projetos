@@ -15,7 +15,7 @@ struct projeto {
 	int prazomes;
 	float custo;
 };
-// funções
+// funÃ§Ãµes
 int cadastra(int *n);
 int exibe(int *n);
 int status1(int *n);
@@ -41,7 +41,7 @@ int main(){
 		
 		//menu main
 		op = 0;
-		printf(" Escolha sua opção:\n");
+		printf(" Escolha sua opÃ§Ã£o:\n");
 		printf(" 1 - Cadastrar projetos\n");
 		printf(" 2 - Listar todos projetos\n");
 		printf(" 3 - Filtrar projeto por custo\n");
@@ -52,7 +52,7 @@ int main(){
 		scanf("%d", &op);
 		fflush(stdin);
 		
-		//decide operação na função
+		//decide operaÃ§Ã£o na funÃ§Ã£o
 		switch (op){
 			case 1:
 				cadastra(&num);
@@ -79,32 +79,32 @@ int cadastra(int *n){
 		system("cls");
 		printf("\n::   Cadastro do projeto #%d   :: \n\n",*n+1);
 
-		printf("Digite o título do projeto #%d\n",*n+1);
+		printf("Digite o tÃ­tulo do projeto #%d\n",*n+1);
 		gets(pjt[*n].titulo);
 		fflush(stdin);					
 		
-		printf("Digite o status do projeto #%d (1- A fazer; 2- Em andamento; 3- Concluído)\n",*n+1);
+		printf("Digite o status do projeto #%d (1- A fazer; 2- Em andamento; 3- ConcluÃ­do)\n",*n+1);
 		scanf("%d",&pjt[*n].status);
 		fflush(stdin);					
 		
-		printf("Digite a descrição do projeto #%d\n",*n+1);
+		printf("Digite a descriÃ§Ã£o do projeto #%d\n",*n+1);
 		gets(pjt[*n].descricao);
 		fflush(stdin);
 		
-		printf("Digite o ano do início do projeto #%d (com 4 dígitos)\n",*n+1);
+		printf("Digite o ano do inÃ­cio do projeto #%d (com 4 dÃ­gitos)\n",*n+1);
 		scanf("%d",&pjt[*n].ano);
 		fflush(stdin);					
 
-		printf("Digite o gerente responsável pelo projeto #%d\n",*n+1);
+		printf("Digite o gerente responsÃ¡vel pelo projeto #%d\n",*n+1);
 		gets(pjt[*n].ger);
 		fflush(stdin);
 		
-		printf("Digite o ano do término do projeto #%d (com 4 dígitos)\n",*n+1);
+		printf("Digite o ano do tÃ©rmino do projeto #%d (com 4 dÃ­gitos)\n",*n+1);
 		scanf("%d",&pjt[*n].prazoano);
 		fflush(stdin);					
 		
 		do{
-		printf("Digite o mês do término do projeto #%d (de 1 a 12)\n",*n+1);				
+		printf("Digite o mÃªs do tÃ©rmino do projeto #%d (de 1 a 12)\n",*n+1);				
 		scanf("%d",&pjt[*n].prazomes);
 		fflush(stdin);	
 		}while((pjt[*n].prazomes<1)||(pjt[*n].prazomes>12));
@@ -135,9 +135,9 @@ int exibe(int *n){
 			for (i=0;i<*n;i++){
 			
 				printf("\n**********************************\n");
-				printf("Projeto número: #%d\n", i+1);
-				printf("Título do projeto: %s\n", pjt[i].titulo);	
-				printf("Descrição do projeto: %s\n", pjt[i].descricao);										
+				printf("Projeto nÃºmero: #%d\n", i+1);
+				printf("TÃ­tulo do projeto: %s\n", pjt[i].titulo);	
+				printf("DescriÃ§Ã£o do projeto: %s\n", pjt[i].descricao);										
 				printf("Ano do projeto: %d\n", pjt[i].ano);				
 				printf("Status do projeto: ");								
 				switch(pjt[i].status){
@@ -148,13 +148,13 @@ int exibe(int *n){
 						printf("Projeto em andamento\n");
 					break;
 					case 3:
-						printf("Projeto concluído\n");
+						printf("Projeto concluÃ­do\n");
 					break;
 					default: 
 						printf("Status indefinido\n");
 					break;														
 				}
-				printf("Gerente responsável pelo projeto: %s\n", pjt[i].ger);				
+				printf("Gerente responsÃ¡vel pelo projeto: %s\n", pjt[i].ger);				
 				printf("Prazo do projeto: ");	
 				switch(pjt[i].prazomes){
 					case 1:
@@ -164,7 +164,7 @@ int exibe(int *n){
 						printf("Fevereiro de ");
 						break;
 					case 3:
-						printf("Março de ");
+						printf("MarÃ§o de ");
 						break;
 					case 4:
 						printf("Abril de ");
@@ -194,7 +194,7 @@ int exibe(int *n){
 						printf("Dezembro de ");
 						break;
 					default: 
-						printf("Mês indefinido\n");
+						printf("MÃªs indefinido\n");
 					break;						
 				}			
 				printf("%d\n", pjt[i].prazoano);				
@@ -220,7 +220,7 @@ int filtrocusto(int *n){
 		system("cls");
 		printf("\n::: FILTRO CUSTO DE PROJETO :::\n\n");
 
-		printf("\nInforme o custo mínimo do projeto: R$ ");
+		printf("\nInforme o custo mÃ­nimo do projeto: R$ ");
 		scanf("%f", &customin);
 		printf("\nInforme o custo maximo do projeto: R$ ");
 		scanf("%f", &customax);
@@ -231,10 +231,10 @@ int filtrocusto(int *n){
 			if ((pjt[i].custo>=customin) && (pjt[i].custo<=customax)){
 				acha = 1;
 				printf("\n**********************************\n");
-				printf("Projeto número: #%d\n", i+1);
-				printf("Título do projeto: %s\n", pjt[i].titulo);				
+				printf("Projeto nÃºmero: #%d\n", i+1);
+				printf("TÃ­tulo do projeto: %s\n", pjt[i].titulo);				
 				printf("Ano do projeto: %d\n", pjt[i].ano);				
-				printf("Descrição do projeto: %s\n", pjt[i].descricao);				
+				printf("DescriÃ§Ã£o do projeto: %s\n", pjt[i].descricao);				
 				printf("Status do projeto: ");								
 				switch(pjt[i].status){
 					case 1:
@@ -244,14 +244,14 @@ int filtrocusto(int *n){
 						printf("Projeto em andamento\n");
 						break;
 					case 3:
-						printf("Projeto concluído\n");
+						printf("Projeto concluÃ­do\n");
 						break;
 				default: 
 					printf("Status indefinido\n");
 				break;																
 				}
 				
-				printf("Gerente responsável pelo projeto: %s\n", pjt[i].ger);				
+				printf("Gerente responsÃ¡vel pelo projeto: %s\n", pjt[i].ger);				
 				printf("Prazo do projeto: ");	
 				switch(pjt[i].prazomes){
 					case 1:
@@ -261,7 +261,7 @@ int filtrocusto(int *n){
 						printf("Fevereiro de ");
 						break;
 					case 3:
-						printf("Março de ");
+						printf("MarÃ§o de ");
 						break;
 					case 4:
 						printf("Abril de ");
@@ -291,7 +291,7 @@ int filtrocusto(int *n){
 						printf("Dezembro de ");
 						break;
 					default: 
-						printf("Mês indefinido\n");
+						printf("MÃªs indefinido\n");
 					break;							
 				}			
 				printf("%d\n", pjt[i].prazoano);				
@@ -322,7 +322,7 @@ int status(int *n){
 			system("cls");
 			printf("\n::: LISTA TODOS OS PROJETOS A FAZER :::\n\n");
 			printf("Insira o status a ser buscado:\n");
-			printf("1 - Pendente \n2 - Em Andamento \n3 - Concluído\n");
+			printf("1 - Pendente \n2 - Em Andamento \n3 - ConcluÃ­do\n");
 			scanf("%d", &status);
 			
 			acha = 0;
@@ -330,10 +330,10 @@ int status(int *n){
 				if (pjt[i].status == status){
 					acha = 1;
 					printf("\n**********************************\n");
-					printf("Projeto número: #%d\n", i+1);
-					printf("Título do projeto: %s\n", pjt[i].titulo);				
+					printf("Projeto nÃºmero: #%d\n", i+1);
+					printf("TÃ­tulo do projeto: %s\n", pjt[i].titulo);				
 					printf("Ano do projeto: %d\n", pjt[i].ano);				
-					printf("Descrição do projeto: %s\n", pjt[i].descricao);				
+					printf("DescriÃ§Ã£o do projeto: %s\n", pjt[i].descricao);				
 					printf("Status do projeto: ");								
 					switch(pjt[i].status){
 						case 1:
@@ -343,14 +343,14 @@ int status(int *n){
 							printf("Projeto em andamento\n");
 						break;
 						case 3:
-							printf("Projeto concluído\n");
+							printf("Projeto concluÃ­do\n");
 						break;
 						default: 
 							printf("Status indefinido\n");
 						break;														
 					}
 					
-					printf("Gerente responsável pelo projeto: %s\n", pjt[i].ger);				
+					printf("Gerente responsÃ¡vel pelo projeto: %s\n", pjt[i].ger);				
 					printf("Prazo do projeto: ");	
 					switch(pjt[i].prazomes){
 						case 1:
@@ -360,7 +360,7 @@ int status(int *n){
 							printf("Fevereiro de ");
 							break;
 						case 3:
-							printf("Março de ");
+							printf("MarÃ§o de ");
 							break;
 						case 4:
 							printf("Abril de ");
@@ -390,7 +390,7 @@ int status(int *n){
 							printf("Dezembro de ");
 							break;
 						default: 
-							printf("Mês indefinido\n");
+							printf("MÃªs indefinido\n");
 						break;						
 					}			
 					printf("%d\n", pjt[i].prazoano);				
